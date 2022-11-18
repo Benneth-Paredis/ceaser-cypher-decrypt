@@ -4,5 +4,5 @@ Takes whole string which may be very slow when the string is long so an optional
 Still needs to be optimized alot.
 
 TO DO:
--Detect which shift amount is correct by detecting real words and then returning the shift value.
--add encrypt file to encrypt message via ceaser cipher.
+Detect which shift amount is correct by detecting real words and then returning the shift value.
+add encrypt file to encrypt message via ceaser cipher.
