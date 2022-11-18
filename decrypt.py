@@ -1,6 +1,11 @@
+import enchant
+
+
 #Author Benneth Paredis
 #Date 18-11-2022
 
+#English dictionary
+en = enchant.Dict("en_US")
 
 #Alphabet only letters
 alphabet = {
@@ -58,8 +63,8 @@ def get_key(val):
 
 # decrypts ceaser cipher and returns all possible results
 def decryptCode(text):
-
     result = []
+
     for n in range(26):
         subresult = []
 
@@ -67,8 +72,10 @@ def decryptCode(text):
             newValOfLetter = (get_val(text[index]) + n) % 26
             shiftedLetter = get_key(newValOfLetter)
             subresult.append(shiftedLetter)
+
+        #converts array of chars into string.
         subresult = convert(subresult)
-        result.append(subresult)
+        #Checks if word is in english dictionary and appends it to result if it is.
+        if(en.check(subresult)): result.append([n, subresult])
+
     return result
-
-
